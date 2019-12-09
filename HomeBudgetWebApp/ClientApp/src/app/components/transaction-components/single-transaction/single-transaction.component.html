@@ -1,0 +1,16 @@
+<div *ngIf="transaction" class="transaction">
+  <h2>{{ transaction.Title }}, {{ transaction.Id }}</h2>
+  <ul>
+    <li>
+      <label>Tytuł:</label>
+      <input [(ngModel)]="transaction.Title" placeholder="Wstaw tytuł..." />
+    </li>
+    <li>
+      <label>Opis:</label>
+      <textarea
+        [(ngModel)]="transaction.Note"
+        placeholder="Wstaw opis..."
+      ></textarea>
+    </li>
+  </ul>
+</div>

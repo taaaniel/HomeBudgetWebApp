@@ -1,0 +1,15 @@
+.transaction {
+    margin: 5px;
+    padding: 5px 10px;
+    border: 1px solid black;
+    background-color: #dddddd;
+    width: 300px;
+}
+
+.transaction * {
+    vertical-align: middle;
+}
+
+.transaction ul li {
+    padding: 5px 0;
+}

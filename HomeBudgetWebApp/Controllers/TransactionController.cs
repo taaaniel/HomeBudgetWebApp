@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using System.Linq;
 using HomeBudgetWebApp.ViewModels;
 using Newtonsoft.Json;
 
@@ -14,6 +13,29 @@ namespace HomeBudgetWebApp.Controllers
     [Route("api/[controller]")]
     public class TransactionController : Controller
     {
+
+        [HttpGet("{id}")]
+        public IActionResult getTransactionByID(int id)
+        {
+            var transactionId = new TransactionViewModel()
+            {
+                Id = id,
+                Amount = 23,
+                Title = "ssss",
+                Note = "dadsdasdasdasd",
+                Category = "Food",
+                IDVallet = 2,
+                CreatedDate = DateTime.Now,
+                LastModifiedDate = DateTime.Now
+            };
+
+            return new JsonResult(
+                transactionId,
+                new JsonSerializerSettings()
+                {
+                    Formatting = Formatting.Indented
+                });
+        }
 
         // GET api/<controller>/5
         [HttpGet("Latest/{num?}")]
@@ -28,7 +50,7 @@ namespace HomeBudgetWebApp.Controllers
                 Title = "ssss",
                 Note = "dadsdasdasdasd",
                 Category = "Food",
-                Vallet = "Common",
+                IDVallet = 2,
                 CreatedDate = DateTime.Now,
                 LastModifiedDate = DateTime.Now
             });
@@ -42,7 +64,7 @@ namespace HomeBudgetWebApp.Controllers
                     Title = "ssss",
                     Note = "dadsdasdasdasd",
                     Category = "Food",
-                    Vallet = "Common",
+                    IDVallet = 3,
                     CreatedDate = DateTime.Now,
                     LastModifiedDate = DateTime.Now
                 });

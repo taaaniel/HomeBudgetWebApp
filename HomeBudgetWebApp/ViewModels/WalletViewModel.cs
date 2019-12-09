@@ -5,20 +5,19 @@ using System.Threading.Tasks;
 
 namespace HomeBudgetWebApp.ViewModels
 {
-    public class TransactionViewModel
+    public class WalletViewModel
     {
-        public TransactionViewModel()
+        public WalletViewModel()
         {
 
         }
 
         public int Id { get; set; }
-        public int Amount { get; set; }
         public string Title { get; set; }
-        public string Note { get; set; }
-        public string Category { get; set; }
-        public int IDVallet { get; set; }
+        public string Descryption { get; set; }
+        public string Icon { get; set; }
         public DateTime CreatedDate { get; set; }
         public DateTime LastModifiedDate { get; set; }
+
     }
 }
